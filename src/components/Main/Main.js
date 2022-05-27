@@ -1,20 +1,13 @@
 import React from "react";
 import QuestionBox from "./questions/QuestionBox"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import "./Main.scss";
-import { getInfo } from "../../redux/actions/action"; 
+import { GetInfo } from "../../redux/actions/action"; 
 import { useDispatch,useSelector } from "react-redux";
-import { NextInfo } from "../../redux/actions/action";
+import { NextInfo} from "../../redux/actions/action";
 
 export default function Main(){
-//   const Information=[
-//     {id: "1", text: "Does this Lagoon have beef?",src: "../../../assest/image01.jpg", photoGrapher:"travis barclay"},
-//     {id: "2", text: "Does this Sushi Delivery have beef?",src: "../../../assest/image02.jpg", photoGrapher:"InGold We Trust"},
-//     {id: "3", text: "Does this Monte Cristo have beef?",src: "../../../assest/image03.jpg", photoGrapher:"travis barclay"},
-//     {id: "4", text: "Does this Sweet and Sour Pork have peanuts?",src: "../../../assest/image04.jpg", photoGrapher:"travis barclay"},
-//     {id: "5", text: "Does this Mysore have beef?",src: "../../../assest/image05.jpg", photoGrapher:"travis barclay"},
-//   ]
-//  let i=0
+
 
 const dispatch=useDispatch()
 const myArray=useSelector((state)=>state.Information)
@@ -23,25 +16,21 @@ const myStep=useSelector((state)=>state.step)
 console.log("myState",myState)
 console.log("myArray",myArray)
 
-//  const [myState, setMyState] = useState(Information[0]);
+//(function () {dispatch(GetInfo()) })();
 
- const ChangeStateByNotSure=()=>{
-    console.log("change state")
-    
- }
+//useEffect(()=>{console.log("test")},[]);
 
- const ChangeStateByNo=()=>{
-  console.log("change state")
-  
-}
-
-const ChangeStateByYes=()=>{
-  console.log("change state")
-  
-}
   return (
+ <>
+   
+    {
+    myArray.length!==0 &&
     <div className="Main">
-      <QuestionBox questionText={myArray[myStep].text} questionImage={myArray[myStep].src} imagePhotoGrapher={myArray[myStep].photoGrapher}/>
+
+      
+      <QuestionBox questionText={myArray.Information[myStep].text} questionImage={myArray.Information[myStep].src} imagePhotoGrapher={myArray.Information[myStep].photoGrapher}/>
+      {/* <QuestionBox questionText={"samane"} questionImage={"tey"} imagePhotoGrapher={"myArray[myStep].photoGrapher"}/> */}
+     
 
       <div className="Main__ButtonsBox"> 
 
@@ -63,6 +52,9 @@ const ChangeStateByYes=()=>{
         
       </div>
     </div>
+    }
+    </>
+
   );
 }
 
