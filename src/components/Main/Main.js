@@ -13,12 +13,11 @@ const dispatch=useDispatch()
 const myArray=useSelector((state)=>state.Information)
 const myState=useSelector((state)=>state)
 const myStep=useSelector((state)=>state.step)
+// const userValue=useSelector((state)=>state.Information.userValue)
+// console.log("userVale:",userValue)
 console.log("myState",myState)
-console.log("myArray",myArray)
+// console.log("myArray",myArray)
 
-//(function () {dispatch(GetInfo()) })();
-
-//useEffect(()=>{console.log("test")},[]);
 
   return (
  <>
@@ -29,9 +28,8 @@ console.log("myArray",myArray)
 
       
       <QuestionBox questionText={myArray.Information[myStep].text} questionImage={myArray.Information[myStep].src} imagePhotoGrapher={myArray.Information[myStep].photoGrapher}/>
-      {/* <QuestionBox questionText={"samane"} questionImage={"tey"} imagePhotoGrapher={"myArray[myStep].photoGrapher"}/> */}
-     
-
+    
+    
       <div className="Main__ButtonsBox"> 
 
         <button className="Main__Button" id="notSure" onClick={()=>{dispatch(NextInfo("Not Sure"))}}>

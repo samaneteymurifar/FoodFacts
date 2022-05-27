@@ -1,10 +1,5 @@
-import GetDataInformation from './API'
+import {GetDataInformation} from './API'
 import {call, put, takeEvery} from 'redux-saga/effects'
-
-// j
-import { GetInfo, NextInfo } from '../actions/action'
-
-
 
 export function* GetInformation(){
     // get data
@@ -18,4 +13,11 @@ function* mySaga(){
     
     yield takeEvery("GET_INFO",GetInformation);
 }
-export default mySaga
+export default mySaga;
+
+
+
+
+
+
+

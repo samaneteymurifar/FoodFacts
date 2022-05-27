@@ -2,7 +2,7 @@ import './QuestionBox.scss';
 import QuestionSentence from "./questionSentence/QuestionSentence"
 import QuestionImage from "./questionImage/QuestionImage";
 function QuestionBox(props) {
-  console.log("from Question:",props.questionText)
+  // console.log("from Question:",props.questionText)
   return (
     <div className="QuestionBox">
       <QuestionSentence QuestionSentence={props.questionText}/>
